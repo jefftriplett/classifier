@@ -14,7 +14,8 @@ directory = os.getcwd()
 target_mp3 = os.path.join(directory, 'Music')
 target_vid = os.path.join(directory, 'Videos')  # Added videos
 target_img = os.path.join(directory, 'Pictures')
-target_zip = os.path.join(directory, 'Archives')  # renamed to archives to associate other formats e.g(zip, 7z, rar)
+# renamed to archives to associate other formats e.g(zip, 7z, rar)
+target_zip = os.path.join(directory, 'Archives')
 target_docs = os.path.join(directory, 'Documents')  # renamed to documents
 
 
@@ -27,20 +28,20 @@ Video - https://en.wikipedia.org/wiki/Video_file_format
 Documents - https://en.wikipedia.org/wiki/List_of_Microsoft_Office_filename_extensions Majority of it is from MS Office
 """
 
-image_formats = ['.png','.jpeg','.gif','.jpg','.bmp','.svg','webp']
+image_formats = ['.png', '.jpeg', '.gif', '.jpg', '.bmp', '.svg', 'webp']
 
-audio_formats = ['.mp3','.aac','.flac','.ogg','.wma','.m4a','.aiff']
+audio_formats = ['.mp3', '.aac', '.flac', '.ogg', '.wma', '.m4a', '.aiff']
 
-video_formats = ['.flv','.ogv','.avi','.mp4','.mpg','.mpeg','.3gp']
+video_formats = ['.flv', '.ogv', '.avi', '.mp4', '.mpg', '.mpeg', '.3gp']
 
-doc_formats = ['.pdf','.doc','.docx','.xls','.xlsv','.xlsx','.ppt','.pptx','.ppsx','.odp','.odt','.ods']
+doc_formats = ['.pdf', '.doc', '.docx', '.xls', '.xlsv', '.xlsx', '.ppt', '.pptx', '.ppsx', '.odp', '.odt', '.ods']
 
-archive_formats = ['.rar','.zip','.7z','.tar.gz','.tar.bz2', '.tar']
+archive_formats = ['.rar', '.zip', '.7z', '.tar.gz', '.tar.bz2', '.tar']
 
 
 print("Scanning Files")
 
-if(len(sys.argv)==1):
+if (len(sys.argv) == 1):
     if not os.path.exists(target_mp3):
         os.makedirs(target_mp3)
     if not os.path.exists(target_vid):
@@ -66,11 +67,12 @@ if(len(sys.argv)==1):
         elif file_ext in doc_formats:
             moveto(file, target_docs)
     print("Done!")
+
 else:
     formats = []
-    #Arguments will be given like: classifier -s .py .pyc "Python Files"
-    if(sys.argv[1]=='-s' or sys.argv[1]=='-S'):
-        for i in range(2,len(sys.argv)-1):
+    # Arguments will be given like: classifier -s .py .pyc "Python Files"
+    if (sys.argv[1] == '-s' or sys.argv[1] == '-S'):
+        for i in range(2, len(sys.argv)-1):
             formats.append(sys.argv[i])
 
         target_dir = directory+'/'+sys.argv[len(sys.argv)-1]
@@ -85,4 +87,3 @@ else:
         print("Done!")
     else:
         print("Invalid Option")
-
