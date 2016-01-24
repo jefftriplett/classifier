@@ -9,6 +9,6 @@ setup(
     author_email="captain.bhrigu@gmail.com",
     license='MIT',
     packages=["classifier"],
-    scripts=["bin/classifier"],
+    scripts=["classifier/bin/classifier"],
     zip_safe=False
 )
