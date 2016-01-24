@@ -8,6 +8,7 @@ setup(
     author="Bhrigu Srivastava",
     author_email="captain.bhrigu@gmail.com",
     license='MIT',
+    install_requires=['click'],
     packages=["classifier"],
     scripts=["classifier/bin/classifier"],
     zip_safe=False
