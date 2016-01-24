@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import click
 import os
-import sys
 
 """
 A list of known formats here can be added.
