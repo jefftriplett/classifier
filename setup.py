@@ -10,6 +10,12 @@ setup(
     license='MIT',
     install_requires=['click'],
     packages=["classifier"],
-    scripts=["classifier/bin/classifier"],
+    package_dir={'classifier': 'classifier'},
+    entry_points={
+        'console_scripts': [
+            'classifier = classifier.cli:main',
+        ]
+    },
+    include_package_data=True,
     zip_safe=False
 )
