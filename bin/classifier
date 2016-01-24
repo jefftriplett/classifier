@@ -4,7 +4,10 @@ import sys
 
 
 def moveto(file, target_folder):
-    os.rename(''+directory+'/'+file,''+target_folder+'/'+file)
+    os.rename(
+        os.path.join(directory, file),
+        os.path.join(target_folder, file)
+    )
 
 directory = os.getcwd()
 # target_pdf = directory+'/pdfs' PDFs are now moved to docs
