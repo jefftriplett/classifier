@@ -2,18 +2,20 @@
 import os
 import sys
 
+
 def moveto(file, target_folder):
 	os.rename(''+directory+'/'+file,''+target_folder+'/'+file)
 
 directory = os.getcwd()
 # target_pdf = directory+'/pdfs' PDFs are now moved to docs
-target_mp3 = directory+'/Music'
-target_vid = directory+'/Videos' #Added videos
-target_img = directory+'/Pictures'
-target_zip = directory+'/Archives' #renamed to archives to associate other formats e.g(zip, 7z, rar)
-target_docs = directory+'/Documents' #renamed to documents
+target_mp3 = os.path.join(directory, 'Music')
+target_vid = os.path.join(directory, 'Videos')  # Added videos
+target_img = os.path.join(directory, 'Pictures')
+target_zip = os.path.join(directory, 'Archives')  # renamed to archives to associate other formats e.g(zip, 7z, rar)
+target_docs = os.path.join(directory, 'Documents')  # renamed to documents
 
-#list of known formats here can be added
+
+# list of known formats here can be added
 """
 All format lists were taken from wikipedia, not all of them were added due to extensions not being exclusive to one format such as webm, or raw
 Audio - https://en.wikipedia.org/wiki/Audio_file_format
@@ -81,5 +83,4 @@ else:
 		print("Done!")
 	else:
 		print("Invalid Option")
-
 
